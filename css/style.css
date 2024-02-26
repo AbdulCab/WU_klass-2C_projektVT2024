@@ -8,10 +8,11 @@
     --burgerline_margin: 5px;
 
     --background_color: rgb(255, 253, 208);
+    --nav_height: 100px;
 }
 
 body{
-    background: grey;
+    background: rgb(103, 56, 103);
 }
 
 section{
@@ -23,7 +24,7 @@ h1{
 }
 
 nav {
-    height: 100px;
+    height: var(--nav_height);
     width: 100%;
     background-color: var(--background_color);
     display: flex;
@@ -36,16 +37,13 @@ nav {
 main{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 250px 350px 300px 300px minmax(100px, 150px);
+    grid-template-rows: 350px 300px 300px minmax(100px, 1fr);
     grid-area: 
-    "welcome_"
     "se1"
     "se2"
     "se3"
     "foo"
     ;
-    gap: 2px;
-    background: gray;
 }
 
 
@@ -68,7 +66,6 @@ main{
     background-color: lightcyan;
 }
 
-
 footer{
     grid: foo;
     height: 100%;
@@ -79,7 +76,7 @@ footer{
     background: var(--background_color);
     display: flex;
     flex-direction: column;
-    height: 350px;
+    height: 400px;
     position: absolute;
     top: -400px;
     align-items: center;
@@ -89,10 +86,6 @@ footer{
     border: 1px solid grey;
 }
 
-#gallery_img {
-    width: 225px;
-    height: 225px;
-}
 
 #image_gallery {
     display: flex;
@@ -154,7 +147,24 @@ footer{
 
 
 @media screen and (min-width: 896px){
+    .burger_line{
+        display: none;
+    }
+
+    #link_list{
+        flex-direction: row;
+        top: 0px;
+        justify-content: space-evenly;
+        width: 100%;
+        height: var(--nav_height);
+    }
+
+    nav{
+        justify-content: center; 
+    }
+
     
+
         
     
 }
