@@ -12,15 +12,12 @@
 }
 
 body{
-    background: rgb(103, 56, 103);
-}
-
-section{
-    padding: 10px;
+    background: rgb(113, 45, 202);
 }
 
 h1{
     font-style: italic;
+    font-size: 2rem;
 }
 
 nav {
@@ -28,7 +25,7 @@ nav {
     width: 100%;
     background-color: var(--background_color);
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
     font-family: 'Courier New', Courier, monospace;
     border-bottom: 2px solid grey;
@@ -37,39 +34,45 @@ nav {
 main{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 350px 300px 300px minmax(100px, 1fr);
-    grid-area: 
+    grid-template-rows: 350px 300px 300px 300px minmax(100px, 1fr);
+    grid-template-areas: 
     "se1"
     "se2"
     "se3"
+    "se4"
     "foo"
     ;
+    gap: 2px;
 }
 
-
-
 #section_1{
-    grid: se1;
+    grid-area: se1;
     height: 100%;
-    background: blue;
+    background-color: rgb(30, 153, 141);
 }
 
 #section_2{
-    grid: se2;
+    grid-area: se2;
     height: 100%;
-    background-color: gray;
+    background-color: rgb(30, 153, 141);
 }
 
 #section_3{
-    grid: se3;
+    grid-area: se3;
     height: 100%;
-    background-color: lightcyan;
+    background-color: rgb(30, 153, 141);
+}
+
+#section_4{
+    grid-area: se4;
+    height: 100%;
+    background-color: rgb(30, 153, 141);
 }
 
 footer{
-    grid: foo;
+    grid-area: foo;
     height: 100%;
-    background: yellow;
+    background-color: grey;
 }
 
 #link_list {
@@ -98,10 +101,13 @@ footer{
     margin: 10px;
 } 
 
-
-
 .links_visible {
     transform: translateY(500px);
+}
+
+#burger{
+    margin-right: 20px;
+    position: relative;
 }
 
 .burger_line {
@@ -111,6 +117,10 @@ footer{
     background: darkgreen;
     border-radius: 20%;
     transition: all 0.5s;
+}
+
+#burger_line_2{
+    width: calc(var(--burgerline_width) - 8px);
 }
 
 #link_list a {
@@ -151,6 +161,18 @@ footer{
         display: none;
     }
 
+    main{
+        height: calc(100vh - 100px);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 300px 400px minmax(150px, 1fr);
+        grid-template-areas: 
+        "se1 se2"
+        "se3 se4"
+        "foo foo"
+        ;
+    }
+
     #link_list{
         flex-direction: row;
         top: 0px;
@@ -163,8 +185,19 @@ footer{
         justify-content: center; 
     }
 
-    
+    #section_3{
+        position: relative;
+    }
 
-        
-    
+    #image_gallery{
+        justify-content: center;
+        position: absolute; 
+        bottom: 25px; 
+        left: 25px;
+    }
+
+    #gallery_img{
+        height: 250px;
+        width: auto;
+    }
 }

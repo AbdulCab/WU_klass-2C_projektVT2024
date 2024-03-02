@@ -38,3 +38,5 @@ function newImageLeft() {
 document.getElementById('arrow_left').addEventListener('click', newImageLeft)
 
 document.getElementById('arrow_right').addEventListener('click', newImageRight)
+
+
