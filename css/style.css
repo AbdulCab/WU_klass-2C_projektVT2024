@@ -16,9 +16,19 @@ body{
 }
 
 h1{
-    font-style: italic;
-    font-size: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2.125rem;
 }
+
+h2{
+    font-size: 1.313rem;
+}
+
+p{
+    font-size: 0.813rem;
+}
+
+
 
 nav {
     height: var(--nav_height);
@@ -45,22 +55,44 @@ main{
     gap: 2px;
 }
 
+footer{
+    grid-area: foo;
+    height: 100%;
+    background-color: grey;
+}
+
 #section_1{
     grid-area: se1;
     height: 100%;
     background-color: rgb(30, 153, 141);
+    display: flex;
+    justify-content: center;
+}
+
+#welcome{
+    padding-top: 60px;
+    
 }
 
 #section_2{
     grid-area: se2;
     height: 100%;
-    background-color: rgb(30, 153, 141);
+    background-color: rgb( 30, 153, 141);
 }
 
 #section_3{
     grid-area: se3;
     height: 100%;
     background-color: rgb(30, 153, 141);
+    position: relative;
+}
+
+#image_gallery {
+    display: flex;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
 }
 
 #section_4{
@@ -69,11 +101,6 @@ main{
     background-color: rgb(30, 153, 141);
 }
 
-footer{
-    grid-area: foo;
-    height: 100%;
-    background-color: grey;
-}
 
 #link_list {
     background: var(--background_color);
@@ -90,19 +117,11 @@ footer{
 }
 
 
-#image_gallery {
-    display: flex;
-    align-items: flex-end;
-}
 
-.arrow_img {
-    width: 50px;
-    height: auto;
-    margin: 10px;
-} 
 
-.links_visible {
-    transform: translateY(500px);
+#gallery_img{
+    height: 200px;
+    width: 250px;
 }
 
 #burger{
@@ -110,17 +129,22 @@ footer{
     position: relative;
 }
 
-.burger_line {
-    width: var(--burgerline_width);
-    height: var(--burgerline_height);
-    margin: var(--burgerline_margin);
-    background: darkgreen;
-    border-radius: 20%;
-    transition: all 0.5s;
-}
-
 #burger_line_2{
     width: calc(var(--burgerline_width) - 8px);
+}
+
+
+
+.arrow_img {
+    width: 50px;
+    height: auto;
+    margin: 10px;
+} 
+
+
+
+.links_visible {
+    transform: translateY(500px);
 }
 
 #link_list a {
@@ -140,6 +164,15 @@ footer{
 #link_list a:hover {
     background: grey;
     color: black;
+}
+
+.burger_line {
+    width: var(--burgerline_width);
+    height: var(--burgerline_height);
+    margin: var(--burgerline_margin);
+    background: darkgreen;
+    border-radius: 20%;
+    transition: all 0.5s;
 }
 
 .burger_in_x_form #burger_line_2 {
@@ -165,7 +198,7 @@ footer{
         height: calc(100vh - 100px);
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 300px 400px minmax(150px, 1fr);
+        grid-template-rows: 350px 400px minmax(150px, 1fr);
         grid-template-areas: 
         "se1 se2"
         "se3 se4"
@@ -185,6 +218,11 @@ footer{
         justify-content: center; 
     }
 
+    #link_list a:hover {
+        background: transparent;
+        color: black;
+    }
+
     #section_3{
         position: relative;
     }
@@ -197,7 +235,7 @@ footer{
     }
 
     #gallery_img{
-        height: 250px;
+        height: 300px;
         width: auto;
     }
 }
