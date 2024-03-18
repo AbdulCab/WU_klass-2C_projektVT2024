@@ -8,26 +8,22 @@
     --burgerline_margin: 5px;
 
     --background_color: rgb(255, 253, 208);
+    --main_color: rgb( 30, 153, 141);
     --nav_height: 100px;
 }
 
 body{
-    background: rgb(113, 45, 202);
+    background: rgb(185, 150, 33);
 }
 
 h1{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 2.125rem;
+    font-size: 2rem;
 }
 
 h2{
-    font-size: 1.313rem;
+    font-size: 1.6rem;
 }
-
-p{
-    font-size: 0.813rem;
-}
-
 
 
 nav {
@@ -44,7 +40,7 @@ nav {
 main{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 350px 300px 300px 300px minmax(100px, 1fr);
+    grid-template-rows: 350px 300px 300px 300px minmax(100px, 200px);
     grid-template-areas: 
     "se1"
     "se2"
@@ -58,49 +54,53 @@ main{
 footer{
     grid-area: foo;
     height: 100%;
-    background-color: grey;
+    background-color: rgb(41, 116, 108);
 }
 
 #section_1{
     grid-area: se1;
     height: 100%;
-    background-color: rgb(30, 153, 141);
+    background-color: var(--main_color);
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
-#welcome{
-    padding-top: 60px;
-    
-}
 
 #section_2{
     grid-area: se2;
     height: 100%;
-    background-color: rgb( 30, 153, 141);
+    background-color: var(--main_color);
 }
 
 #section_3{
     grid-area: se3;
     height: 100%;
-    background-color: rgb(30, 153, 141);
-    position: relative;
+    background-color: var(--main_color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #image_gallery {
-    display: flex;
-    align-items: flex-end;
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 20px;
+    padding: 10px;
+    justify-content: center;
 }
+
+#gallery_img{
+    height: 200px;
+    width: 250px;
+}
+
+.arrow_img {
+    display: none;
+} 
 
 #section_4{
     grid-area: se4;
     height: 100%;
-    background-color: rgb(30, 153, 141);
+    background-color: var(--main_color);
 }
-
 
 #link_list {
     background: var(--background_color);
@@ -117,13 +117,6 @@ footer{
 }
 
 
-
-
-#gallery_img{
-    height: 200px;
-    width: 250px;
-}
-
 #burger{
     margin-right: 20px;
     position: relative;
@@ -135,11 +128,7 @@ footer{
 
 
 
-.arrow_img {
-    width: 50px;
-    height: auto;
-    margin: 10px;
-} 
+
 
 
 
@@ -187,6 +176,94 @@ footer{
     transform: translateY(calc((-1)*(var(--burgerline_height) + var(--burgerline_margin)))) rotate(-45deg);
 }
 
+/* Början av article.html kodning allmänt */
+
+.card {
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-direction: column;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgb(10, 10, 87);
+    word-wrap: break-word;
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .card-content {
+    padding: 20px;
+    color: aliceblue;
+  }
+
+#article_1{
+    grid-area: art1;
+    height: 100%;
+    background-color: var(--main_color);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+#article_2{
+    grid-area: art2;
+    height: 100%;
+    background-color: orange;
+    padding-left: 120px;
+}
+
+#article_3{
+    grid-area: art3;
+    height: 100%;
+    background-color: var(--main_color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#article_4{
+    grid-area: art4;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 50px;
+}
+#article_5{
+    grid-area: art5;
+    height: 100%;
+    background-color: var(--main_color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#article_6{
+    grid-area: art6;
+    height: 100%;
+    background-color: var(--main_color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#article_7{
+    grid-area: art7;
+    height: 100%;
+    background-color: var(--main_color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.article_img{
+    width: 150px;
+    height: auto;
+
+}
 
 
 @media screen and (min-width: 896px){
@@ -194,11 +271,11 @@ footer{
         display: none;
     }
 
-    main{
+    #grid_wrapper_index{
         height: calc(100vh - 100px);
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 350px 400px minmax(150px, 1fr);
+        grid-template-rows: 350px 450px minmax(125px, 1fr);
         grid-template-areas: 
         "se1 se2"
         "se3 se4"
@@ -223,19 +300,65 @@ footer{
         color: black;
     }
 
-    #section_3{
-        position: relative;
+    img{
+        overflow: hidden;
     }
 
     #image_gallery{
-        justify-content: center;
-        position: absolute; 
-        bottom: 25px; 
-        left: 25px;
+        justify-content: center; 
+
     }
 
     #gallery_img{
-        height: 300px;
-        width: auto;
+        height: 325px;
+        width: 400px;
     }
+
+    .arrow_img{
+        display: initial;   
+        bottom: 80px;
+        width: 50px;
+        height: auto;
+        margin: 10px;
+    }
+
+    .welcome_text{
+        display: block;
+        padding: 10px;
+        text-align: center;
+        position: relative;
+        bottom: 40px;
+    }
+
+    h1{
+        font-size: 3rem;
+    }
+
+    h2{
+        font-size: 2rem;
+    }
+
+    .sec2_text{
+        position: relative;
+        top: 90px;
+        text-align: center;
+        width: 420px;
+        margin-left: 200px;
+    }
+
+    /* Början av article.html styling för desktop */
+
+    #grid_wrapper_article{
+        height: calc(125vh - 100px);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 200px 300px 450px minmax(100px, 1fr);
+        grid-template-areas: 
+        "art1 art1 art1"
+        "art2 art3 art4"
+        "art5 art6 art7"
+        "foo foo foo"
+        ;
+    }
+
 }
