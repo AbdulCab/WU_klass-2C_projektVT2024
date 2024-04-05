@@ -379,7 +379,14 @@ header.grid-item {
     justify-content: center;
     font-size: 18px;
     box-sizing: border-box;
+}
 
+button {
+    width: 50px;
+    height: 25px;
+    background-color: #11f194;
+    border-radius: 20px;
+    justify-self: end;
 }
 
 .contact-form input[type="text"],
@@ -396,6 +403,8 @@ header.grid-item {
     height: 400px;
     width: 100%;
 }
+
+
 
 #map-and-head {
     grid-area: map;
