@@ -39,6 +39,8 @@ document.getElementById('arrow_left').addEventListener('click', newImageLeft)
 
 document.getElementById('arrow_right').addEventListener('click', newImageRight)
 
+//bildspel för mobil
+
 var touchstartX = 0;
 var touchendX = 0;
 var touchableElement = document.getElementById('gallery_img');
@@ -64,5 +66,3 @@ function handleGesture() {
         newImageLeft()
     }
 }
-
-

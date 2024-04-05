@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,16 +12,21 @@
     --nav_height: 100px;
 }
 
-body{
+body {
     background: rgb(185, 150, 33);
 }
 
-h1{
+p{
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+h1 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 2rem;
 }
 
-h2{
+h2 {
     font-size: 1.6rem;
 }
 
@@ -37,10 +42,10 @@ nav {
     border-bottom: 2px solid grey;
 }
 
-main{
+#grid_wrapper_index {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 350px 300px 300px 300px minmax(100px, 200px);
+    grid-template-rows: 350px 400px 300px 400px minmax(80px, 150px);
     grid-template-areas: 
     "se1"
     "se2"
@@ -51,29 +56,50 @@ main{
     gap: 2px;
 }
 
-footer{
+footer {
     grid-area: foo;
     height: 100%;
     background-color: rgb(41, 116, 108);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#section_1{
+#section_1 {
     grid-area: se1;
     height: 100%;
     background-color: var(--main_color);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 
-#section_2{
+#section_2 {
     grid-area: se2;
     height: 100%;
     background-color: var(--main_color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
 }
 
-#section_3{
+#sec2_text {
+    justify-content: center;
+}
+
+.spaced {
+    margin-bottom: 10px;
+}
+
+h2.spaced {
+    text-align: center;
+}
+
+#section_3 {
     grid-area: se3;
     height: 100%;
     background-color: var(--main_color);
@@ -83,11 +109,11 @@ footer{
 }
 
 #image_gallery {
-    padding: 10px;
+    padding: 40px;
     justify-content: center;
 }
 
-#gallery_img{
+#gallery_img {
     height: 200px;
     width: 250px;
 }
@@ -96,11 +122,16 @@ footer{
     display: none;
 } 
 
-#section_4{
+#section_4 {
     grid-area: se4;
     height: 100%;
     background-color: var(--main_color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
+
 
 #link_list {
     background: var(--background_color);
@@ -117,12 +148,12 @@ footer{
 }
 
 
-#burger{
+#burger {
     margin-right: 20px;
     position: relative;
 }
 
-#burger_line_2{
+#burger_line_2 {
     width: calc(var(--burgerline_width) - 8px);
 }
 
@@ -178,104 +209,242 @@ footer{
 
 /* Början av article.html kodning allmänt */
 
-.card {
-    max-width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-    flex-direction: column;
-    margin: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: rgb(10, 10, 87);
-    word-wrap: break-word;
-  }
-  
-  .card img {
-    width: 100%;
-    height: auto;
-    border-bottom: 1px solid #ccc;
-  }
+#grid_wrapper_article {
+    height: calc(200vh - 100px);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 450px 450px 450px 450px 450px 450px minmax(125px, 200px);
+    grid-template-areas: 
+    "art1"
+    "art2"
+    "art3"
+    "art4"
+    "art5"
+    "art6"
+    "art7"
+    "foo"
+    ;
+    gap: 2px;
+}
 
-  .card-content {
-    padding: 20px;
-    color: aliceblue;
-  }
 
-#article_1{
+article {
+    display: flex;
+    justify-content: center;
+}
+
+#article_1 { 
     grid-area: art1;
     height: 100%;
     background-color: var(--main_color);
     display: flex;
-    flex-direction: column;
-    justify-content: end;
+    align-items: center;
+    justify-content: center;
 }
 
-#article_2{
+
+#article_2 {
     grid-area: art2;
-    height: 100%;
-    background-color: orange;
-    padding-left: 120px;
-}
-
-#article_3{
-    grid-area: art3;
     height: 100%;
     background-color: var(--main_color);
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    position: relative;
+    justify-content: end;
 }
 
-#article_4{
+.article-card {
+    max-width: 100%;
+    height: 90%;
+    border: 3px solid #11f194;
+    border-radius: 8px;
+    overflow: scroll;
+    flex-direction: column;
+    margin: 20px;
+    background-color: rgb(14, 41, 56);
+    word-wrap: break-word;
+
+  }
+  
+  .article-card img {
+    width: 100%;
+    height: 175px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .article-card-content {
+    color: aliceblue;
+    padding: 10px;
+  }
+
+  #article-card_1 {
+    position: absolute;
+    bottom: 0;
+    box-shadow: -10px 10px 3px rgba(0, 0, 0, 0.911);
+  }
+
+#article_3 {
+    grid-area: art3;
+    height: 100%;
+    background-color: var(--main_color);
+    position: relative;
+}
+
+#article-card_2 {
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0px 15px 3px rgba(0, 0, 0, 0.911);
+  }
+
+#article_4 { 
     grid-area: art4;
     height: 100%;
-    display: flex;
     flex-direction: column;
+    background-color: var(--main_color);
     align-items: center;
     padding-right: 50px;
+    position: relative;
 }
-#article_5{
+
+#article-card_3 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    box-shadow: 10px 10px 3px rgba(0, 0, 0, 0.911);
+}
+
+#article_5 {
     grid-area: art5;
     height: 100%;
     background-color: var(--main_color);
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: end;
+    position: relative;
 }
-#article_6{
+
+#article-card_4 {
+    position: absolute;
+    top: 0;
+    box-shadow: -10px 10px 3px rgba(0, 0, 0, 0.911);
+}
+
+#article_6 { 
     grid-area: art6;
     height: 100%;
     background-color: var(--main_color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
 }
-#article_7{
+#article_7 {
     grid-area: art7;
     height: 100%;
     background-color: var(--main_color);
+    padding-right: 50px;
+    position: relative;
+}
+
+#article-card_6 {
+    position: absolute;
+    left: 0;
+    box-shadow: 10px 10px 3px rgba(0, 0, 0, 0.911);
+}
+
+
+/* contacts.html början */
+
+.grid-wrapper-contacts {
+    height: calc(100vh - 100px);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 300px 400px minmax(125px, 200px);
+    grid-template-areas: 
+    'hea'
+    'form'
+    'map'
+    'foo'
+    ;
+    gap: 2px;
+}
+
+header.grid-item {
+    grid-area: hea;
+    height: 100%;
+}
+
+.contact-form {
+    grid-area: form;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    background-color: var(--main_color);
     align-items: center;
-}
-
-.article_img{
-    width: 150px;
-    height: auto;
+    justify-content: center;
+    font-size: 18px;
+    box-sizing: border-box;
 
 }
 
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%; /* Make the input box width 100% of its container */
+    padding: 10px; /* Add padding to the input box */
+    margin-bottom: 10px; /* Add some space between input boxes */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
 
-@media screen and (min-width: 896px){
-    .burger_line{
+#map-container {
+    grid-area: map;
+    height: 400px;
+    width: 100%;
+}
+
+#map-and-head {
+    grid-area: map;
+    background-color: var(--main_color);
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.grid-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    background-color: var(--main_color);
+}
+
+
+
+
+@media screen and (min-width: 896px) {
+
+    p{
+        line-height: 1.6;
+    }
+
+    .spaced {
+        margin-bottom: 20px;
+    }
+
+    p.spaced {
+    width: 700px;
+    }
+
+    h2.spaced {
+        text-align: center;
+    }
+
+    .burger_line {
         display: none;
     }
 
-    #grid_wrapper_index{
+    #grid_wrapper_index {
         height: calc(100vh - 100px);
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 350px 450px minmax(125px, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 0.8fr 0.8fr minmax(125px, 200px);
         grid-template-areas: 
         "se1 se2"
         "se3 se4"
@@ -283,7 +452,7 @@ footer{
         ;
     }
 
-    #link_list{
+    #link_list {
         flex-direction: row;
         top: 0px;
         justify-content: space-evenly;
@@ -291,7 +460,7 @@ footer{
         height: var(--nav_height);
     }
 
-    nav{
+    nav {
         justify-content: center; 
     }
 
@@ -300,21 +469,21 @@ footer{
         color: black;
     }
 
-    img{
+    img {
         overflow: hidden;
     }
 
-    #image_gallery{
+    #image_gallery {
         justify-content: center; 
 
     }
 
-    #gallery_img{
+    #gallery_img {
         height: 325px;
         width: 400px;
     }
 
-    .arrow_img{
+    .arrow_img {
         display: initial;   
         bottom: 80px;
         width: 50px;
@@ -322,7 +491,7 @@ footer{
         margin: 10px;
     }
 
-    .welcome_text{
+    .welcome_text {
         display: block;
         padding: 10px;
         text-align: center;
@@ -330,29 +499,23 @@ footer{
         bottom: 40px;
     }
 
-    h1{
+    h1 {
         font-size: 3rem;
     }
 
-    h2{
+    h2 {
         font-size: 2rem;
     }
 
-    .sec2_text{
-        position: relative;
-        top: 90px;
-        text-align: center;
-        width: 420px;
-        margin-left: 200px;
-    }
+
 
     /* Början av article.html styling för desktop */
 
-    #grid_wrapper_article{
-        height: calc(125vh - 100px);
+    #grid_wrapper_article {
+        height: calc(150vh - 100px);
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 200px 300px 450px minmax(100px, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 125px 800px 800px minmax(125px, 200px);
         grid-template-areas: 
         "art1 art1 art1"
         "art2 art3 art4"
@@ -360,5 +523,74 @@ footer{
         "foo foo foo"
         ;
     }
+
+    .article-card {
+        max-width: 450px;
+        overflow: hidden;
+
+    }
+
+    .article-card img {
+        height: 300px;
+    }
+
+
+    .event-container {
+        display: flex;
+        justify-content: center; /* Horizontal alignment */
+        gap: 20px; /* Space between cards */
+    }
+    
+    .event-card {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 800px; /* Fixed width for each card */
+    }
+
+    /* contacts.html början för desktop */
+
+    .grid-wrapper-contacts {
+        height: calc(100vh - 100px);
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 500px minmax(125px, 200px);
+        grid-template-areas: 
+        'hea'
+        'form'
+        'foo'
+        ;
+        position: relative;
+    }
+
+    .map-and-form {
+        grid-area: form;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        background-color: var(--main_color);
+        align-items: center;
+        justify-content: space-evenly;
+        font-size: 18px;
+        box-sizing: border-box;
+    }
+
+
+
+    #map-container {
+        grid-area: form;
+        height: 400px;
+        width: 500px;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        width: 150%;
+    }
+    
+
 
 }

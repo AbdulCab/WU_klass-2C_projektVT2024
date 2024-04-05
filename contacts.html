@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css">
+</head>
+<body>
+
+    <nav>
+        <ul id="link_list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="articles.html">Articles</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="contacts.html">Contacts</a></li>
+        </ul>
+        <section id="burger">
+            <div id="burger_line_1" class="burger_line"></div>
+            <div id="burger_line_2" class="burger_line"></div>
+            <div id="burger_line_3" class="burger_line"></div>
+        </section>
+    </nav>
+
+
+
+    <main class="grid-wrapper-contacts">
+        <header class="grid-item">
+            <h1>Contact Us</h1>
+        </header>
+
+        <div class="map-and-form">
+            <div class="contact-form">
+                <form action="php/send_email.php" method="post">
+                    <div id="name-contacts">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div id="mail-contacts">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div id="message-contacts">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+
+
+                    <button type="submit" name="submit">Send</button>
+                </form>
+
+            </div>
+            <div id="map-and-head">
+                <h2>Find us here!</h2>
+                <!-- Map container -->
+                <div id="map-container"> </div>
+            </div>
+
+        </div>
+
+
+
+        <footer>
+            <p>&copy; Work in progress</p>
+        </footer> 
+    </main>
+
+
+
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoicGF0cm9sbGVyIiwiYSI6ImNsdWxjZ2k3bjBkdnUya29naXVoemJqaDEifQ.LOcFeUbM7i3CB1WkQ5Umxg';
+    var map = new mapboxgl.Map({
+        container: 'map-container',
+        style: 'mapbox://styles/mapbox/streets-v11', // Replace with your map style
+        center: [11.97457, 57.69035], // Replace with the initial center coordinates [longitude, latitude]
+        zoom: 15 // Replace with the initial zoom level
+    });
+
+    var marker = new mapboxgl.Marker()        
+    .setLngLat([11.97450, 57.69035]) // Set the marker coordinates [longitude, latitude]
+    .addTo(map);
+</script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
