@@ -4,11 +4,11 @@ if(isset($_POST['submit'])) {
     $email = $_POST['email'];
     $message = $_POST['message'];
 
-    $to = "abdulmannan.cabdalla@elev.ga.ntig.se"; // Replace with your email address
+    $to = "abdulmannan.cabdalla@elev.ga.ntig.se";
     $subject = "Message from $name";
     $body = "Name: $name\nEmail: $email\n\n$message";
 
-    // Send email
+    // skicka mail
     if(mail($to, $subject, $body)) {
         echo "<script>alert('Your message has been sent.');</script>";
     } else {

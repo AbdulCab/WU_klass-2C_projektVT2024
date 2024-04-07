@@ -16,11 +16,11 @@
             <li><a href="events.html">Events</a></li>
             <li><a href="contacts.html">Contacts</a></li>
         </ul>
-        <section id="burger">
+        <div id="burger">
             <div id="burger_line_1" class="burger_line"></div>
             <div id="burger_line_2" class="burger_line"></div>
             <div id="burger_line_3" class="burger_line"></div>
-        </section>
+        </div>
     </nav>
 
 
@@ -64,26 +64,26 @@
 
 
         <footer>
-            <p>&copy; Work in progress</p>
+            <h2>&copy; Work in progress</h2>
         </footer> 
     </main>
 
 
 
-<script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
-<script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoicGF0cm9sbGVyIiwiYSI6ImNsdWxjZ2k3bjBkdnUya29naXVoemJqaDEifQ.LOcFeUbM7i3CB1WkQ5Umxg';
-    var map = new mapboxgl.Map({
-        container: 'map-container',
-        style: 'mapbox://styles/mapbox/streets-v11', // Replace with your map style
-        center: [11.97457, 57.69035], // Replace with the initial center coordinates [longitude, latitude]
-        zoom: 15 // Replace with the initial zoom level
-    });
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoicGF0cm9sbGVyIiwiYSI6ImNsdWxjZ2k3bjBkdnUya29naXVoemJqaDEifQ.LOcFeUbM7i3CB1WkQ5Umxg';
+        var map = new mapboxgl.Map({
+            container: 'map-container',
+            style: 'mapbox://styles/mapbox/streets-v11', // Replace with your map style
+            center: [11.97457, 57.69035], // Replace with the initial center coordinates [longitude, latitude]
+            zoom: 15 // Replace with the initial zoom level
+        });
 
-    var marker = new mapboxgl.Marker()        
-    .setLngLat([11.97450, 57.69035]) // Set the marker coordinates [longitude, latitude]
-    .addTo(map);
-</script>
+        var marker = new mapboxgl.Marker()        
+        .setLngLat([11.97450, 57.69035]) // Set the marker coordinates [longitude, latitude]
+        .addTo(map);
+    </script>
 
     <script src="js/script.js"></script>
 </body>
