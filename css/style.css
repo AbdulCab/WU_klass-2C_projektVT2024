@@ -441,7 +441,7 @@ button {
     height: calc(100vh - 100px);
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 100px 700px minmax(125px, 200px);
+    grid-template-rows: 100px 1200px minmax(125px, 200px);
     grid-template-areas: 
     'hed'
     'eve'
@@ -463,21 +463,34 @@ button {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     gap: 15px; /* Space between cards */
-    padding: 25px;
-    background-color: var(--main_color);
+    padding: 20px;
+    background-color: rgb(53, 98, 116);
 }
 
 .event-card {
-    background-color: #21d6d6;
+    background-color: #2f7575;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 0; /* Remove padding */
     width: 100%; /* Fixed width for each card */
-    height: 300px;
+    height: auto; /* Change height to auto to accommodate content */
+    position: relative; /* Position relative for absolute positioning of the image */
+}
+
+.event-info {
+    position: static;
+    margin-bottom: 20px; /* Add margin to create space between content and image */
+}
+
+.event-card img {
+    width: 100%;
+    height: auto; /* Set height to auto to maintain aspect ratio */
+    padding: 0;
+    margin: 0;
 }
 
 
@@ -640,7 +653,7 @@ button {
         height: calc(100vh - 100px);
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 100px 700px minmax(125px, 200px);
+        grid-template-rows: 100px 800px minmax(125px, 200px);
         grid-template-areas: 
         'hed'
         'eve'
@@ -648,7 +661,7 @@ button {
         ;
         gap: 2px;
     }
-
+    
     .head-events {
         grid-area: hed;
         display: flex;
@@ -656,26 +669,21 @@ button {
         align-items: center;
         background-color: var(--main_color);
     }
-
+    
     .event-container {
-        grid-area: eve;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 15px; /* Space between cards */
+        flex-direction: row;
         padding: 50px;
-        background-color: var(--main_color);
     }
     
     .event-card {
-        background-color: #21d6d6;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        width: 80%; /* Fixed width for each card */
-        height: 300px;
+        width: 100%; /* Fixed width for each card */
+        height: 750px; /* Change height to auto to accommodate content */
+        position: relative; /* Position relative for absolute positioning of the image */
+    }
+    
+    .event-info {
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 40px; /* Add margin to create space between content and image */
     }
 }
