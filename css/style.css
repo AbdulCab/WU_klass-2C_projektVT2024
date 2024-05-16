@@ -237,6 +237,7 @@ article {
     background-color: var(--main_color);
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 
@@ -549,8 +550,6 @@ button {
         align-items: center; 
 
     }
-
-
 
     #gallery_img {
         height: 300px;
