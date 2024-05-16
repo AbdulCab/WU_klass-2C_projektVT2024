@@ -9,66 +9,60 @@
 </head>
 <body>
 
-    <nav>
-        <ul id="link_list">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="articles.html">Articles</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="contacts.html">Contacts</a></li>
-        </ul>
-        <div id="burger">
-            <div id="burger_line_1" class="burger_line"></div>
-            <div id="burger_line_2" class="burger_line"></div>
-            <div id="burger_line_3" class="burger_line"></div>
-        </div>
-    </nav>
-
-
+    <header>
+        <nav>
+            <ul id="link_list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+            </ul>
+            <div id="burger">
+                <div id="burger_line_1" class="burger_line"></div>
+                <div id="burger_line_2" class="burger_line"></div>
+                <div id="burger_line_3" class="burger_line"></div>
+            </div>
+        </nav>
+    </header>
 
     <main class="grid-wrapper-contacts">
         <header class="grid-item">
             <h1>Contact Us</h1>
         </header>
 
-        <div class="map-and-form">
-            <section class="contact-form">
+        <section class="map-and-form">
+            <article class="contact-form">
                 <form action="php/send_email.php" method="post">
                     <div id="name-contacts">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
 
                     <div id="mail-contacts">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
 
                     <div id="message-contacts">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
                     </div>
-
 
                     <button type="submit" name="submit">Send</button>
                 </form>
-
-            </section>
-            <div id="map-and-head">
+            </article>
+            
+            <article id="map-and-head">
                 <h2>Find us here!</h2>
                 <!-- Map container -->
                 <div id="map-container"> </div>
-            </div>
-
-        </div>
-
-
+            </article>
+        </section>
 
         <footer>
             <h2>&copy; Bombastic Corporation</h2>
         </footer> 
     </main>
-
-
 
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
     <script>
