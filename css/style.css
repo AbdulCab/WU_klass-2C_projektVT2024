@@ -49,7 +49,7 @@ nav {
 #grid_wrapper_index {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 350px 400px 300px 400px minmax(80px, 150px);
+    grid-template-rows: 300px 400px 300px 400px minmax(80px, 150px);
     grid-template-areas: 
     "se1"
     "se2"
@@ -108,18 +108,27 @@ h2.spaced {
     height: 100%;
     background-color: var(--main_color);
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#sec3_text {
+    text-align: center;
+    font-size: 1.5rem;
 }
 
 #image_gallery {
-    padding: 40px;
+    padding: 20px;
     justify-content: center;
 }
 
 #gallery_img {
     height: 200px;
-    width: 250px;
+    width: 275px;
+    border-style: ridge;
+    border-radius: 5px;
+    border-width: 10px;
+    border-color: rgb(45, 45, 37);
 }
 
 .arrow_img {
@@ -244,7 +253,7 @@ article {
 #article_2 {
     grid-area: art2;
     height: 100%;
-    background-color: var(--main_color);
+    background-color: rgb(53, 98, 116);
     display: flex;
     position: relative;
     justify-content: end;
@@ -283,8 +292,10 @@ article {
 #article_3 {
     grid-area: art3;
     height: 100%;
-    background-color: var(--main_color);
+    display: flex;
+    background-color: rgb(53, 98, 116);
     position: relative;
+    align-content: center;
 }
 
 #article-card_2 {
@@ -297,7 +308,7 @@ article {
     grid-area: art4;
     height: 100%;
     flex-direction: column;
-    background-color: var(--main_color);
+    background-color: rgb(53, 98, 116);
     align-items: center;
     padding-right: 50px;
     position: relative;
@@ -313,7 +324,7 @@ article {
 #article_5 {
     grid-area: art5;
     height: 100%;
-    background-color: var(--main_color);
+    background-color: rgb(53, 98, 116);
     display: flex;
     justify-content: end;
     position: relative;
@@ -328,7 +339,7 @@ article {
 #article_6 { 
     grid-area: art6;
     height: 100%;
-    background-color: var(--main_color);
+    background-color: rgb(53, 98, 116);
     display: flex;  
     position: relative;
 
@@ -343,7 +354,7 @@ article {
 #article_7 {
     grid-area: art7;
     height: 100%;
-    background-color: var(--main_color);
+    background-color: rgb(53, 98, 116);
     padding-right: 50px;
     position: relative;
 }
@@ -477,7 +488,7 @@ button {
 }
 
 .event-info {
-    position: static;
+
     margin-bottom: 20px; /* Add margin to create space between content and image */
 }
 
@@ -500,7 +511,7 @@ button {
     }
 
     p.spaced {
-    width: 700px;
+        width: 700px;
     }
 
     h2.spaced {
@@ -512,13 +523,14 @@ button {
     }
 
     #grid_wrapper_index {
-        height: calc(100vh - 100px);
+        height: calc(115vh - 200px);
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 0.8fr 0.8fr minmax(125px, 200px);
+        grid-template-rows: 200px 0.8fr 0.8fr minmax(125px, 200px);
         grid-template-areas: 
-        "se1 se2"
-        "se3 se4"
+        "se1 se1"
+        "se2 se4"
+        "se3 se3"
         "foo foo"
         ;
     }
@@ -565,10 +577,8 @@ button {
 
     .welcome_text {
         display: block;
-        padding: 10px;
         text-align: center;
-        position: relative;
-        bottom: 40px;
+        
     }
 
     h1 {
@@ -650,10 +660,10 @@ button {
     /* Början av events.html för desktop  */
 
     #grid_wrapper_events {
-        height: calc(100vh - 100px);
+        height: calc(115vh - 100px);
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 100px 800px minmax(125px, 200px);
+        grid-template-rows: 0.2fr 0.8fr minmax(125px, 200px);
         grid-template-areas: 
         'hed'
         'eve'
@@ -663,6 +673,7 @@ button {
     }
     
     .head-events {
+        height: 100px;
         grid-area: hed;
         display: flex;
         justify-content: center;
@@ -671,8 +682,16 @@ button {
     }
     
     .event-container {
+        grid-area: eve;
+        display: flex;
         flex-direction: row;
         padding: 50px;
+    }
+
+    .event-container img {
+        width: 100%;
+        height: auto; /* Set height to auto to maintain aspect ratio */
+        overflow: hidden;
     }
     
     .event-card {
