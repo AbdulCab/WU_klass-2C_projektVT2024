@@ -8,7 +8,7 @@
     --burgerline_margin: 5px;
 
     --background_color: rgb(255, 253, 208);
-    --main_color: rgb( 30, 153, 141);
+    --main_color: rgb(53, 98, 116);
     --nav_height: 100px;
 }
 
@@ -46,16 +46,19 @@ nav {
     border-bottom: 2px solid grey;
 }
 
+#index_nav {
+    width: 700px;
+}
+
 #grid_wrapper_index {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 300px 400px 300px 400px minmax(80px, 150px);
+    grid-template-columns: 350px 350px;
+    grid-template-rows: 150px 550px 300px minmax(80px, 150px);
     grid-template-areas: 
-    "se1"
-    "se2"
-    "se3"
-    "se4"
-    "foo"
+    "se1 se1"
+    "se2 se4"
+    "se3 se3"
+    "foo foo"
     ;
     gap: 2px;
 }
@@ -219,8 +222,8 @@ h2.spaced {
 #grid_wrapper_article {
     height: calc(200vh - 100px);
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 100px 500px 500px 500px 700px 420px 520px minmax(125px, 200px);
+    grid-template-columns: 550px;
+    grid-template-rows: 100px 550px 550px 550px 550px 550px 550px minmax(125px, 200px);
     grid-template-areas: 
     "art1"
     "art2"
@@ -234,10 +237,17 @@ h2.spaced {
     gap: 2px;
 }
 
+#article_nav {
+    width: 550px;
+}
 
 article {
     display: grid;
-    justify-content: center;
+    align-content: center;
+}
+
+#grid_wrapper_article .article-card {
+    width: 500px;
 }
 
 #article_1 { 
@@ -256,7 +266,6 @@ article {
     background-color: rgb(53, 98, 116);
     display: flex;
     position: relative;
-    justify-content: end;
 }
 
 .article-card {
@@ -326,7 +335,6 @@ article {
     height: 100%;
     background-color: rgb(53, 98, 116);
     display: flex;
-    justify-content: end;
     position: relative;
 }
 
@@ -502,6 +510,10 @@ button {
 
 @media screen and (min-width: 896px) {
 
+    nav {
+        width: 100%;
+    }
+
     p{
         line-height: 1.6;
     }
@@ -526,7 +538,7 @@ button {
         height: calc(115vh - 200px);
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 200px 0.8fr 0.8fr minmax(125px, 200px);
+        grid-template-rows: 200px 1fr 0.8fr minmax(125px, 200px);
         grid-template-areas: 
         "se1 se1"
         "se2 se4"
@@ -545,6 +557,10 @@ button {
 
     nav {
         justify-content: center; 
+    }
+
+    #index_nav {
+        width: 100%;
     }
 
     #link_list a:hover {
@@ -606,6 +622,9 @@ button {
         ;
     }
 
+    #article_nav {
+        width: 100%;
+    }
 
     .article-card {
         max-width: 450px;
@@ -688,16 +707,19 @@ button {
         padding: 50px;
     }
 
-    .event-container img {
-        width: 100%;
-        height: auto; /* Set height to auto to maintain aspect ratio */
-        overflow: hidden;
-    }
     
     .event-card {
         width: 100%; /* Fixed width for each card */
         height: 750px; /* Change height to auto to accommodate content */
         position: relative; /* Position relative for absolute positioning of the image */
+    }
+
+    .event-container img {
+        position: absolute;
+        top: 0;
+        border-radius: 5px;
+        width: 100%;
+        overflow: hidden;
     }
     
     .event-info {
